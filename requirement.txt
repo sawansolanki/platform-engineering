@@ -3,3 +3,4 @@ azure-mgmt-resource
 azure-mgmt-storage
 python-dotenv
 azure-identity
+flask
