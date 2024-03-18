@@ -20,6 +20,8 @@ server_name = "sawandataopsserver"
 database_name = "sa1database"
 resource_group_name = "Paid_RG"
 location = "eastus"
+tagname = "owner"
+tagvalue = "sawan"
 
 sql_client = SqlManagementClient(credentials, subscription_id)
 
@@ -44,6 +46,11 @@ database = sql_client.databases.begin_create_or_update(
         "location": location,
         "sku": {
             "name": "S0"
+        },
+        "minimal_tls_version": "1.2",
+        "tags" :{
+            tagname : tagvalue,
+            "DataOps" : "PlatformEngineering"
         }
     }
 ).result()
